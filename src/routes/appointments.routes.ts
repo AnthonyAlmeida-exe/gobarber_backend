@@ -10,6 +10,7 @@ import { getCustomRepository } from 'typeorm';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 appointmentsRouter.use(ensureAuthenticated);
+
 appointmentsRouter.get('/', async (req, res) => {
   const appointmentsRepository = getCustomRepository(AppointmentRepository);
   const appt = await appointmentsRepository.find();
